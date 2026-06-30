@@ -1,7 +1,6 @@
 services:
   cloudflared:
-    build: .
-    image: cloudflared
+    image: picopapaya/cloudflared:latest
     container_name: cloudflared
     restart: unless-stopped
     environment:
