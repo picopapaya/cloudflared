@@ -1,0 +1,16 @@
+services:
+  cloudflared:
+    build: .
+    image: cloudflared
+    container_name: cloudflared
+    restart: unless-stopped
+    environment:
+      TUNNEL_TOKEN: ${TUNNEL_TOKEN:?TUNNEL_TOKEN is required}
+    command: ["--token", "${TUNNEL_TOKEN}"]
+    networks:
+      - llm-net
+
+networks:
+  llm-net:
+    external: true
+    name: llm-net
