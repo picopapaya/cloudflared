@@ -16,7 +16,11 @@ In this setup it routes external traffic into services on the `llm-net` Docker n
 ## Usage
 
 ```bash
-TUNNEL_TOKEN=eyJ... docker compose up --build
+# Prod — pull image from Docker Hub
+TUNNEL_TOKEN=eyJ... docker compose up
+
+# Dev — build image locally
+TUNNEL_TOKEN=eyJ... docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build
 ```
 
 ## Configuration
